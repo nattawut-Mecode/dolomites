@@ -33,6 +33,18 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
 
+  Widget ChoicePopular(String title,Color foreground){
+    return Padding(
+      padding: EdgeInsets.only(left: 15),
+      child: GestureDetector(
+        onTap: (){
+
+        },
+        child: Text(title,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16,color: foreground),),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,59 +88,17 @@ class _MyHomePageState extends State<MyHomePage> {
             Padding(
               padding: EdgeInsets.only(top:MediaQuery.of(context).size.height*0.375),
               child: Container(
+                margin: EdgeInsets.only(left:0,right: 10,top: 15),
                 width: MediaQuery.of(context).size.width,
                 height: 50,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.only(),
-                      child: FlatButton(
-                        onPressed: (){
-
-                        },
-                        color: Colors.transparent,
-                        splashColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        child: Text("Recommended",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(),
-                      child: FlatButton(
-                        onPressed: (){
-
-                        },
-                        color: Colors.transparent,
-                        splashColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        child: Text("Popular",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16,color: Colors.grey),),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(),
-                      child: FlatButton(
-                        onPressed: (){
-
-                        },
-                        color: Colors.transparent,
-                        splashColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        child: Text("Largest",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16,color: Colors.grey),),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(),
-                      child: FlatButton(
-                        onPressed: (){
-
-                        },
-                        color: Colors.transparent,
-                        splashColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        child: Text("Big",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16,color: Colors.grey),),
-                      ),
-                    )
+                    ChoicePopular("Recommended",Colors.black),
+                    ChoicePopular("Popular",Colors.grey),
+                    ChoicePopular("Largest",Colors.grey),
+                    ChoicePopular("Big",Colors.grey),
+                    ChoicePopular("Small",Colors.grey),
                   ],
                 ),
               ),
